@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ResultGeneratorForm } from "#/features/result-generator/components/result-generator-form";
+import { ResultGeneratorPage } from "#/features/result-generator/components/result-generator-page";
 
 const SITE_URL = "https://unn-result-generator.vercel.app";
 
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
 function App() {
 	return (
 		<main>
-			<ResultGeneratorForm />
+			<ResultGeneratorPage />
 		</main>
 	);
 }

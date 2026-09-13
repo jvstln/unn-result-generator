@@ -78,9 +78,9 @@ export const parseResultSheet = async (
  */
 const resultSheetTemplateMap = {
 	name: [/^name/i],
-	regNo: [/^regNo$/i, /^matric/i],
+	regNo: [/^regNo$/i, /reg\s*\.*\s*no\s*\.*/i, /^matric/i],
 	examScore: [/^examScore$/i, /^exam/i],
-	caScore: [/^caScore$/i, /^ca/i, /^cont. assess/i],
+	caScore: [/^caScore$/i, /^c\s*\.*\s*a/i, /^cont. assess/i],
 	totalScore: [/^totalScore$/i, /^total$/i],
 	grade: [/^grade$/i],
 	department: [/^department$/i, /^dept$/i],
