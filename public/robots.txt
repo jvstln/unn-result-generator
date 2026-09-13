@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://unn-result-generator.vercel.app/sitemap.xml

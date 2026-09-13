@@ -9,17 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ResultGeneratorRouteImport } from './routes/result-generator'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResultGeneratorRouteImport } from './routes/result-generator'
 
-const ResultGeneratorRoute = ResultGeneratorRouteImport.update({
-  id: '/result-generator',
-  path: '/result-generator',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultGeneratorRoute = ResultGeneratorRouteImport.update({
+  id: '/result-generator',
+  path: '/result-generator',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -51,18 +51,18 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/result-generator': {
-      id: '/result-generator'
-      path: '/result-generator'
-      fullPath: '/result-generator'
-      preLoaderRoute: typeof ResultGeneratorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/result-generator': {
+      id: '/result-generator'
+      path: '/result-generator'
+      fullPath: '/result-generator'
+      preLoaderRoute: typeof ResultGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
